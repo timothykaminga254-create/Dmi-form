@@ -1,0 +1,547 @@
+:root {
+  --page-bg: #bfe4eb;
+  --accent: #08a9df;
+  --accent-dark: #047ea6;
+  --ink: #111827;
+  --line: #1f2937;
+  --field: #ffffff;
+  --radius: 8px;
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: linear-gradient(180deg, #d8f1f5 0%, var(--page-bg) 28%, #add8df 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.application-form {
+  background: var(--page-bg);
+  border: 1px solid rgba(31, 41, 55, 0.18);
+  box-shadow: var(--shadow);
+  padding: clamp(16px, 3vw, 34px);
+}
+
+.form-header {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr) 190px;
+  gap: 22px;
+  align-items: start;
+}
+
+.logo {
+  width: 126px;
+  max-width: 100%;
+  height: auto;
+}
+
+.header-copy {
+  text-align: center;
+}
+
+.header-copy h1,
+.header-copy h2,
+.header-copy p {
+  margin: 0;
+}
+
+.header-copy h1 {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.header-copy h2 {
+  color: var(--accent);
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  text-transform: uppercase;
+  margin: 4px 0 12px;
+}
+
+.header-copy p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.photo-upload {
+  display: grid;
+  place-items: center;
+  min-height: 190px;
+  padding: 16px;
+  border: 2px solid var(--line);
+  background: #f8fafc;
+  color: #7b818b;
+  text-align: center;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.photo-upload input {
+  width: 100%;
+  margin-top: 12px;
+  font-size: 0.78rem;
+}
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.campus-card {
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  background: var(--field);
+  text-align: center;
+}
+
+.campus-card h3 {
+  margin: 0;
+  padding: 5px 10px;
+  color: white;
+  background: var(--accent);
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.campus-card p {
+  margin: 0;
+  padding: 14px 10px;
+  line-height: 1.22;
+}
+
+.application-bar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin: 28px 0 8px;
+}
+
+.option-row,
+.inline-options,
+.qualification-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  align-items: center;
+}
+
+.option-row label,
+.inline-options label,
+.checkbox-grid label,
+.programme-choice label,
+.programme-choice fieldset label {
+  font-weight: 700;
+}
+
+.application-bar h2 {
+  margin: 0;
+  padding: 8px 20px;
+  color: white;
+  background: var(--accent);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.application-number {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+}
+
+.application-number input {
+  width: min(160px, 45%);
+}
+
+.form-section {
+  margin-top: 26px;
+}
+
+.form-section h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.form-section h2 span {
+  display: inline;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.form-section h3 {
+  margin: 22px 0 10px;
+  font-size: 1.05rem;
+}
+
+.form-section p {
+  margin: 0 0 14px;
+}
+
+.field-grid {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.four-col,
+.name-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.name-grid label:nth-child(1),
+.name-grid label:nth-child(2) {
+  grid-column: span 2;
+}
+
+label,
+.field-label,
+legend {
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 5px;
+  padding: 8px 10px;
+  border: 2px solid var(--line);
+  border-radius: 0;
+  background: var(--field);
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0 6px 0 0;
+  vertical-align: -4px;
+  accent-color: var(--accent-dark);
+}
+
+.compact-fieldset,
+.programme-choice fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.compact-fieldset label,
+.programme-choice fieldset label {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px 12px 0 0;
+  white-space: nowrap;
+}
+
+.full-field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.programme-list {
+  display: grid;
+  gap: 12px;
+}
+
+.programme-choice {
+  display: grid;
+  grid-template-columns: 150px minmax(220px, 1fr) minmax(280px, auto) minmax(190px, auto);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid var(--line);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.programme-choice h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.qualification-options .specify-field {
+  flex: 1 1 260px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+}
+
+.academic-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.academic-table th,
+.academic-table td {
+  width: 33.333%;
+  padding: 8px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.academic-table th {
+  background: #32a6bb;
+  color: #061019;
+  font-size: 1.05rem;
+}
+
+.academic-table input {
+  display: inline-block;
+  width: min(100%, 210px);
+  min-height: 32px;
+  margin: 0 0 0 5px;
+  padding: 3px 6px;
+  border-width: 1px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 22px;
+  margin: 18px 0;
+}
+
+.checkbox-grid label,
+.checklist label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.declaration-line input {
+  display: inline-block;
+  width: min(360px, 100%);
+  margin: 0 6px;
+}
+
+.checklist {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.checklist label {
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.checklist label:last-child {
+  border-bottom: 0;
+}
+
+.checklist span {
+  max-width: 920px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+button[type="submit"] {
+  min-height: 48px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--accent-dark);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  background: #036985;
+}
+
+@media (max-width: 980px) {
+  .form-header {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .photo-upload {
+    grid-column: 1 / -1;
+    min-height: 150px;
+  }
+
+  .campus-grid,
+  .three-col,
+  .four-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .application-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .application-number {
+    justify-content: flex-start;
+  }
+
+  .programme-choice {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .application-form {
+    min-height: 100vh;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .form-header,
+  .campus-grid,
+  .two-col,
+  .three-col,
+  .four-col,
+  .name-grid,
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    justify-self: center;
+  }
+
+  .header-copy {
+    text-align: center;
+  }
+
+  .name-grid label:nth-child(1),
+  .name-grid label:nth-child(2) {
+    grid-column: auto;
+  }
+
+  .option-row,
+  .inline-options {
+    align-items: flex-start;
+  }
+
+  .application-bar h2 {
+    width: 100%;
+  }
+
+  .application-number {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .application-number input {
+    width: 100%;
+  }
+
+  .compact-fieldset label,
+  .programme-choice fieldset label {
+    white-space: normal;
+  }
+
+  .declaration-line input {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .checklist label {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .page-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .application-form {
+    box-shadow: none;
+  }
+
+  button[type="submit"] {
+    display: none;
+  }
+}
